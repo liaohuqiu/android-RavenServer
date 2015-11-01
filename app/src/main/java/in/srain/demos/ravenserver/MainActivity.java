@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -37,6 +38,7 @@ public final class MainActivity extends AppCompatActivity {
                 (ipAddress >> 16 & 0xff), (ipAddress >> 24 & 0xff));
 
         String url = "http://" + formattedIpAddress + ":" + RavenService.RAVEN_PORT;
+        Log.d("testl", url);
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -74,7 +76,7 @@ public final class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_about) {
-            String url = "https://github.com/liaohuqiu/android-UCToast";
+            String url = "https://github.com/liaohuqiu/android-RavenServer";
             Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(myIntent);
             return true;

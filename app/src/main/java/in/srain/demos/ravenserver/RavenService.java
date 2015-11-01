@@ -13,6 +13,7 @@ import java.io.IOException;
 public final class RavenService extends Service {
 
     public static final int RAVEN_PORT = 23457;
+    public static final String RAVEN_URL = "https://github.com/liaohuqiu/android-RavenServer";
 
     private static final String KEY_FOR_WEAK_LOCK = "weak-lock";
     private static final String KEY_FOR_CMD = "cmd";
@@ -83,8 +84,7 @@ public final class RavenService extends Service {
 
         @Override
         public Response serve(IHTTPSession session) {
-            String url = "https://github.com/";
-            final String html = String.format("<header> <meta http-equiv='refresh' content='0; url=%s' /> </header>", url);
+            final String html = String.format("<header> <meta http-equiv='refresh' content='0; url=%s' /> </header>", RAVEN_URL);
             Response response = NanoHTTPD.newFixedLengthResponse(Response.Status.OK, MIME_HTML, html);
             SecondActivity.start(getApplication());
             return response;
