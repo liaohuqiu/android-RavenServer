@@ -12,9 +12,9 @@ Open an activity in WeChat!
 
 ### About the demo
 
-    Run the demo. Then send the url to the WeChat conversation, or post it to the WeChat Discover feed. Or convert it to QR code, then scan it in WeChat.
+Run the demo. Then send the url to the WeChat conversation, or post it to the WeChat Discover feed. Or convert it to QR code, then scan it in WeChat.
 
-    Then an activity will the url is clicked or scaned. Alos, a page target page will be opened.
+Then an activity will the url is clicked or scaned. Alos, a page target page will be opened.
 
 ### The story about this demo
 
