@@ -1,0 +1,5 @@
+<resources>
+    <string name="action_about">关于</string>
+    <string name="second_activity_tip">此乃被后台服务所起动的 activity 页面。</string>
+    <string name="init_tip">请将url发到微信对话或者朋友圈，然后点击打开.或者转成二维码。使用扫一扫功能扫描。</string>
+</resources>
