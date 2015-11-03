@@ -1,13 +1,11 @@
 package in.srain.demos.ravenserver;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,16 +13,7 @@ import android.widget.TextView;
 
 public final class MainActivity extends AppCompatActivity {
 
-    private final static String KEY_CONTENT = "content";
     private TextView mTextView;
-
-    public static void startForContent(Context context, String content) {
-        Intent intent = new Intent(context, MainActivity.class);
-        intent.putExtra(KEY_CONTENT, content);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        context.startActivity(intent);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,22 +36,7 @@ public final class MainActivity extends AppCompatActivity {
         mTextView = (TextView) findViewById(R.id.text_view);
         mTextView.setText(url);
 
-        Intent intent = getIntent();
-        tryToShowContent(intent);
         RavenService.start(this);
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        tryToShowContent(intent);
-    }
-
-    private void tryToShowContent(Intent intent) {
-        String content = intent.getStringExtra(KEY_CONTENT);
-        if (!TextUtils.isEmpty(content)) {
-            mTextView.setText(content);
-        }
     }
 
     @Override
